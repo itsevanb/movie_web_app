@@ -1,10 +1,10 @@
 import json
-from data_manager_interface import DataManagerInterface
+from .data_manager_interface import DataManagerInterface
 
 class JSONDataManager(DataManagerInterface):
     #Initialize the class with the file name
-    def __it__(self, file_name):
-        self.file_name = file_name
+    def __init__(self, file_name):
+        self.file_name = 'movie_web_app/datamanager/' + file_name
 
     def _read_data(self):
         #Open the file and read the data
