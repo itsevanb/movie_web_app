@@ -28,10 +28,16 @@ class JSONDataManager(DataManagerInterface):
                 return user.get('movies', [])
         return []
     
-    def add_user(self, user):
+    def add_user(self, name):
         #Add a new user
-        users = self.get_all_users()
-        users.append(user)
+        users = self._read_data()
+        new_user_id = max([user['id'] for user in users]) + 1
+        new_user = {
+            'id': new_user_id,
+            'name': name,
+            'movies': []
+        }
+        users.append(new_user)
         self._write_data(users)
 
     def remove_user(self, user_id):
@@ -50,18 +56,19 @@ class JSONDataManager(DataManagerInterface):
 
     def update_movie(self, user_id, movie_id, updated_movie):
         #Update a movie for a user
-        users = self.get_all_users()
-        for user in users:
+        data = self._read_data()
+        for user in data:
             if user['id'] == user_id:
                 for movie in user['movies']:
                     if movie['id'] == movie_id:
                         movie.update(updated_movie)
-        self._write_data(users)
+                        break
+        self._write_data(data)
 
-    def removie_movie(self, user_id, movie_id):
+    def delete_movie(self, user_id, movie_id):
         #Remove a movie for a user
         users = users = self.get_all_users()
         for user in users:
             if user['id'] == user_id:
-                user['movies'] = [movie for movie in user['movies'] if movie['id'] != movie_id]
+                user['movies'] = [movie for movie in user['movies'] if int(movie['id']) != int(movie_id)]
         self._write_data(users)
