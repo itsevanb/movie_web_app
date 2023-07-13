@@ -58,5 +58,10 @@
                 "plot": "A cyborg comes from the future, to kill a girl named Sarah Lee."
             }
         ]
+    },
+    {
+        "id": 5,
+        "name": "Emily",
+        "movies": []
     }
 ]
