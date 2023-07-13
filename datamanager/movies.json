@@ -1,82 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Alice",
-        "movies": [
-            {
-                "id": 1,
-                "name": "Inception",
-                "director": "Christopher Nolan",
-                "year": 2010,
-                "rating": 8.8
-            },
-            {
-                "id": 2,
-                "name": "The Dark Knight",
-                "director": "Christopher Nolan",
-                "year": 2008,
-                "rating": 9.0
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Bob",
-        "movies": [
-            {
-                "id": 3,
-                "name": "Interstellar",
-                "director": "Christopher Nolan",
-                "year": 2014,
-                "rating": 8.6
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Charlie",
-        "movies": [
-            {
-                "title": "Title not available",
-                "year": 0,
-                "rating": 0.0,
-                "poster": "Poster not available",
-                "plot": "Plot not available"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Evan ",
-        "movies": [
-            {
-                "id": 1,
-                "title": "Terminator",
-                "year": 1991,
-                "rating": 6.1,
-                "poster": "N/A",
-                "plot": "A cyborg comes from the future, to kill a girl named Sarah Lee."
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Emily",
+        "name": "evan ",
+        "username": "itsevanb",
+        "password": "pbkdf2:sha256:600000$g21JUy5mU796L1NF$cc9a9965e551184e6bf26b8f7edef9ad1d918c6136f95cfd8d5ad0d38bd4ce9c",
         "movies": []
     },
     {
-        "id": 6,
-        "name": "Albert",
-        "movies": [
-            {
-                "id": 1,
-                "title": "Air Bud",
-                "year": 1997,
-                "rating": 9.4,
-                "poster": "https://m.media-amazon.com/images/M/MV5BMzQxODE4MzEyNF5BMl5BanBnXkFtZTgwNjk2OTY4ODE@._V1_SX300.jpg",
-                "plot": "A young boy and a talented stray dog with an amazing basketball playing ability become instant friends. Rebounding from his father's accidental death, 12-year-old Josh Framm moves with his family to the small town of Fernfield, Washington. The new kid in town, Josh has no friends and is too shy to try out for the school basketball team. Instead he prefers to practice alone on an abandoned court, he befriends a runaway golden retriever named Buddy. Josh is amazed when he realizes that Buddy loves basketball...that is playing basketball...and he is GOOD! Josh eventually makes the school team and Buddy is named the Team Mascot. Josh and Buddy become the stars of halftime. Buddy's half-time talent draws media attention. Unfortunately, when Buddy's mean former owner, Norm Snively, comes along with a scheme to cash in on the pup's celebrity, it looks like they are going to be separated.",
-                "name": "Air Albert"
-            }
-        ]
+        "id": 2,
+        "name": "evan",
+        "username": "itsevanb",
+        "password": "pbkdf2:sha256:600000$VWoh1qkAEkObeZLJ$9b7d0dac82651c06df6012bf38f341ae6426e8a79f8d60e20b98f425dd0bb417",
+        "movies": []
     }
 ]

@@ -41,7 +41,7 @@ class JSONDataManager(DataManagerInterface):
         #Add a new user
         try:
             users = self._read_data()
-            new_user_id = max([user['id'] for user in users]) + 1
+            new_user_id = max([user['id'] for user in users], default = 0) + 1
             hashed_password = generate_password_hash(password)
             new_user = {
                 'id': new_user_id,
