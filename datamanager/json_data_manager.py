@@ -67,6 +67,15 @@ class JSONDataManager(DataManagerInterface):
         users = [user for user in users if user['id'] != user_id]
         self._write_data(users)
 
+    def update_user(self, user_id, updated_user):
+        """Update a user's information."""
+        users = self.get_all_users()
+        for i, user in enumerate(users):
+            if user['id'] == user_id:
+                users[i] = updated_user
+                self._write_data(users)
+                break
+
     def add_movie(self, user_id, movie):
         #Add a movie for a user
         users = self.get_all_users()
