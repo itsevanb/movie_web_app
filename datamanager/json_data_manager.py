@@ -8,13 +8,20 @@ class JSONDataManager(DataManagerInterface):
 
     def _read_data(self):
         #Open the file and read the data
-        with open(self.file_name, 'r') as file:
-            return json.load(file)
+        try:
+            with open(self.file_name, 'r') as file:
+                return json.load(file)
+        except Exception as e:
+            print(f"An error occurred while reading the data: {str(e)}")
+            return []
         
     def _write_data(self, data):
         #Open the file and write the data
-        with open(self.file_name, 'w') as file:
-            json.dump(data, file, indent=4)
+        try:
+            with open(self.file_name, 'w') as file:
+                json.dump(data, file, indent=4)
+        except Exception as e:
+            print(f"An error occurred while writing the data: {str(e)}")
 
     def get_all_users(self):
         #Return all users
@@ -26,19 +33,23 @@ class JSONDataManager(DataManagerInterface):
         for user in users:
             if user['id'] == user_id:
                 return user.get('movies', [])
+        print(f"User with id {user_id} not found.")
         return []
     
     def add_user(self, name):
         #Add a new user
-        users = self._read_data()
-        new_user_id = max([user['id'] for user in users]) + 1
-        new_user = {
-            'id': new_user_id,
-            'name': name,
-            'movies': []
-        }
-        users.append(new_user)
-        self._write_data(users)
+        try:
+            users = self._read_data()
+            new_user_id = max([user['id'] for user in users]) + 1
+            new_user = {
+                'id': new_user_id,
+                'name': name,
+                'movies': []
+            }
+            users.append(new_user)
+            self._write_data(users)
+        except Exception as e:
+            print(f"An error occurred while adding the user: {str(e)}")
 
     def remove_user(self, user_id):
         #Remove a user
