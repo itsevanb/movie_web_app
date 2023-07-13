@@ -1,5 +1,6 @@
 import json
 from .data_manager_interface import DataManagerInterface
+from werkzeug.security import generate_password_hash
 
 class JSONDataManager(DataManagerInterface):
     #Initialize the class with the file name
@@ -36,14 +37,17 @@ class JSONDataManager(DataManagerInterface):
         print(f"User with id {user_id} not found.")
         return []
     
-    def add_user(self, name):
+    def add_user(self, name, username, password):
         #Add a new user
         try:
             users = self._read_data()
             new_user_id = max([user['id'] for user in users]) + 1
+            hashed_password = generate_password_hash(password)
             new_user = {
                 'id': new_user_id,
                 'name': name,
+                'username': username,
+                'password': hashed_password,
                 'movies': []
             }
             users.append(new_user)
