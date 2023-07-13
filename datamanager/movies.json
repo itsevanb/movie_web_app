@@ -1,16 +1,1 @@
-[
-    {
-        "id": 1,
-        "name": "evan ",
-        "username": "itsevanb",
-        "password": "pbkdf2:sha256:600000$g21JUy5mU796L1NF$cc9a9965e551184e6bf26b8f7edef9ad1d918c6136f95cfd8d5ad0d38bd4ce9c",
-        "movies": []
-    },
-    {
-        "id": 2,
-        "name": "evan",
-        "username": "itsevanb",
-        "password": "pbkdf2:sha256:600000$VWoh1qkAEkObeZLJ$9b7d0dac82651c06df6012bf38f341ae6426e8a79f8d60e20b98f425dd0bb417",
-        "movies": []
-    }
-]
+[]

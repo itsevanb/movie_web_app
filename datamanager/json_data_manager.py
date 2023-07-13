@@ -28,6 +28,11 @@ class JSONDataManager(DataManagerInterface):
         #Return all users
         return self._read_data()
     
+    def get_user(self, user_id):
+        """Return a specific user based on their id."""
+        users = self._read_data()
+        return next((user for user in users if user['id'] == user_id), None)
+    
     def get_user_movies(self, user_id):
         #Return all movies for a user
         users = self.get_all_users()
@@ -48,6 +53,7 @@ class JSONDataManager(DataManagerInterface):
                 'name': name,
                 'username': username,
                 'password': hashed_password,
+                'bio': '',
                 'movies': []
             }
             users.append(new_user)
