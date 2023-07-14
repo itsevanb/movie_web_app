@@ -95,6 +95,16 @@ class JSONDataManager(DataManagerInterface):
                         break
         self._write_data(data)
 
+    def get_movie(self, user_id, movie_id):
+        """Return a specific movie based on its id."""
+        users = self._read_data()
+        for user in users:
+            if user['id'] == user_id:
+                for movie in user['movies']:
+                    if movie['id'] == movie_id:
+                        return movie
+        return None
+
     def delete_movie(self, user_id, movie_id):
         #Remove a movie for a user
         users = users = self.get_all_users()
