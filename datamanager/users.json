@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "name": "ev",
+        "username": "ev",
+        "password": "pbkdf2:sha256:600000$kEbdlsb5C28fYcZ2$8a83a25c107ba232d862ea5b93490fb12c36dcbe0d742315902989cb51b32418",
+        "bio": "",
+        "movies": []
+    }
+]
